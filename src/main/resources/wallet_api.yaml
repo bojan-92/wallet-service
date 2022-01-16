@@ -6,7 +6,7 @@ info:
 servers:
   - url: 'https'
 paths:
-  /player/balance:
+  /player/currentBalance:
     get:
       tags:
         - Player
@@ -24,45 +24,36 @@ paths:
           $ref: '#/components/responses/PlayerBalance'
         '400':
           description: 'Bad request'
+        '404':
+          description: 'Player not found'
         '500':
-          description: 'Server Error'
+          description: 'Server error'
   /transaction/create:
     post:
       tags:
         - Transaction
-      parameters:
-        - name: 'playerId'
-          in: query
-          required: true
-          schema:
-            type: integer
-            format: int64
-          description: player id
-          example: 333
-        - name: 'type'
-          in: query
-          required: true
-          schema:
-            type: string
-            enum:
-              - "debit"
-              - "credit"
-          description: transaction type
-        - name: 'amount'
-          in: query
-          required: true
-          schema:
-            type: number
-            format: double
-          description: transaction amount
-          example: 333.33
+      requestBody:
+        description: Create transaction request
+        required: true
+        content:
+          application/json:
+            schema:
+              properties:
+                playerId:
+                  type: number
+                  format: int64
+                type:
+                  type: string
+                amount:
+                  type: number
+                  format: double
       responses:
         '201':
           description: 'Created'
         '400':
           description: 'Bad request'
         '500':
-          description: 'Server Error'
+          description: 'Server error'
   /transaction/playerHistory:
     get:
       tags:
@@ -82,7 +73,7 @@ paths:
         '400':
           description: 'Bad request'
         '500':
-          description: 'Server Error'
+          description: 'Server error'
 components:
   responses:
     PlayerBalance:
