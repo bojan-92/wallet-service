@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Leo Vegas Wallet API
+  description: Leo Vegas assessment
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /player/balance:
+    get:
+      tags:
+        - Player
+      parameters:
+        - name: 'playerId'
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: player id
+          example: 333
+      responses:
+        '200':
+          $ref: '#/components/responses/PlayerBalance'
+        '400':
+          description: 'Bad request'
+        '500':
+          description: 'Server Error'
+  /transaction/create:
+    post:
+      tags:
+        - Transaction
+      parameters:
+        - name: 'playerId'
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: player id
+          example: 333
+        - name: 'type'
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - "debit"
+              - "credit"
+          description: transaction type
+        - name: 'amount'
+          in: query
+          required: true
+          schema:
+            type: number
+            format: double
+          description: transaction amount
+          example: 333.33
+      responses:
+        '201':
+          description: 'Created'
+        '400':
+          description: 'Bad request'
+        '500':
+          description: 'Server Error'
+  /transaction/playerHistory:
+    get:
+      tags:
+        - Transaction
+      parameters:
+        - name: 'playerId'
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int64
+          description: player id
+          example: 333
+      responses:
+        '200':
+          $ref: '#/components/responses/PlayerTransactionHistoryArray'
+        '400':
+          description: 'Bad request'
+        '500':
+          description: 'Server Error'
+components:
+  responses:
+    PlayerBalance:
+      description: Player current balance
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              currentBalance:
+                type: number
+                format: double
+    PlayerTransactionHistoryArray:
+      description: Player transaction history response
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PlayerTransactionHistory'
+  schemas:
+    PlayerTransactionHistory:
+      type: object
+      properties:
+        playerName:
+          type: string
+        transactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transaction'
+    Transaction:
+      type: object
+      properties:
+        type:
+          type: string
+        amount:
+          type: number
+          format: double
+
