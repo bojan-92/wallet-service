@@ -8,6 +8,7 @@ Wallet API
  - [git](https://git-scm.com/) - Version control system
  - [Spring Boot](https://spring.io/projects/spring-boot) - Framework for development of Spring Applications
  - [Rest Assured](https://rest-assured.io/) - Java library for testing Restful Web services.
+ - [JUnit](https://junit.org/junit5/) - Testing framework for Java
 
 ## External Tools Used
  - [Postman](https://www.postman.com/) - API Development Environment
