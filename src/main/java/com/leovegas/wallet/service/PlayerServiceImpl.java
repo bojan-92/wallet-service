@@ -22,7 +22,8 @@ public class PlayerServiceImpl implements PlayerService {
 
   @Override
   public CurrentBalanceResponse getCurrentBalanceForPlayer(Long id) {
-    return CurrentBalanceResponse.builder().currentBalance(playerRepository.getCurrentBalanceForPlayer(id)).build();
+    Player player = findById(id);
+    return CurrentBalanceResponse.builder().currentBalance(player.getBalance()).build();
   }
 
 }

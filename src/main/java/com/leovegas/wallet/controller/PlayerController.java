@@ -19,8 +19,8 @@ public class PlayerController {
   private PlayerService playerService;
 
   @GetMapping(value = "/player/currentBalance", produces = MediaType.APPLICATION_JSON_VALUE)
-  public ResponseEntity<CurrentBalanceResponse> getCurrentBalance(@RequestParam(value = "id") Long id) {
-    return new ResponseEntity<>(playerService.getCurrentBalanceForPlayer(id), HttpStatus.OK);
+  public ResponseEntity<CurrentBalanceResponse> getCurrentBalance(@RequestParam(value = "playerId") Long playerId) {
+    return new ResponseEntity<>(playerService.getCurrentBalanceForPlayer(playerId), HttpStatus.OK);
   }
 
 }
