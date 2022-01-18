@@ -1,5 +1,4 @@
 # wallet-service
-Wallet API
 ## Built With
  - [Maven](https://maven.apache.org/) - Dependency Management
  - [Lombok](https://projectlombok.org/) - for Intellij IDEA you have to install Lombok plugin
