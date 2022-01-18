@@ -2,9 +2,7 @@ package com.leovegas.wallet.controller;
 
 import com.leovegas.wallet.controller.dto.CreateTransactionRequest;
 import com.leovegas.wallet.controller.dto.PlayerTransactionHistoryResponse;
-import com.leovegas.wallet.model.constant.TransactionType;
 import com.leovegas.wallet.service.TransactionService;
-import java.math.BigDecimal;
 import javax.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,18 +15,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController(value = "/transaction")
 @Log4j2
 public class TransactionController {
 
   @Autowired
   private TransactionService transactionService;
 
-  @GetMapping(value = "/playerHistory", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/transaction/playerHistory", produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<PlayerTransactionHistoryResponse> getPlayerTransactionHistory(
-      @RequestParam(value = "playerId") String playerId) {
-    PlayerTransactionHistoryResponse playerTransactionHistoryResponse = new PlayerTransactionHistoryResponse();
-    return new ResponseEntity<>(playerTransactionHistoryResponse, HttpStatus.OK);
+      @RequestParam(value = "playerId") Long playerId) {
+    return new ResponseEntity<>(transactionService.getPlayerTransactionHistory(playerId), HttpStatus.OK);
   }
 
   @PostMapping(value = "/transaction/create", produces = MediaType.APPLICATION_JSON_VALUE)

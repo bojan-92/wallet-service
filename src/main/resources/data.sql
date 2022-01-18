@@ -5,4 +5,4 @@ CREATE TABLE IF NOT EXISTS TRANSACTION
 (id BIGINT NOT NULL AUTO_INCREMENT, type VARCHAR (255), amount DECIMAL, player INTEGER, PRIMARY KEY (id));
 
 INSERT INTO PLAYER
-(id, name, balance) values (1, 'Jack', 0);
+(id, name, balance) values (1, 'Jack', 50);
