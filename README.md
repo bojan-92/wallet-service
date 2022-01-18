@@ -7,6 +7,7 @@ Wallet API
  - [H2 Database](https://en.wikipedia.org/wiki/H2_(DBMS)) - Relational database management system written in Java
  - [git](https://git-scm.com/) - Version control system
  - [Spring Boot](https://spring.io/projects/spring-boot) - Framework for development of Spring Applications
+ - [Rest Assured](https://rest-assured.io/) - Java library for testing Restful Web services.
 
 ## External Tools Used
  - [Postman](https://www.postman.com/) - API Development Environment
