@@ -28,6 +28,6 @@
   4. Service is available on `localhost:8080` (for more details check wallet_api.yaml)
 
 
-If you want to check data in H2 database, using browser navigate to `localhost:8080/h2-console` and set parameters as shown on the picture below and clock Connect:
+If you want to check data in H2 database, using browser navigate to `localhost:8080/h2-console` and set parameters as shown on the picture below and click Connect:
 
 ![Screenshot](https://user-images.githubusercontent.com/15815459/150154770-e120b0f7-f213-4cba-b4be-235552528c74.png)
