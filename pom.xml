@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.leovegas</groupId>
 	<artifactId>wallet</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>LeoVegas Wallet Service</name>
 	<description>LeoVegas Wallet service</description>
 	<properties>
@@ -62,12 +62,6 @@
 			<version>5.8.1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-<!--			<version>5.4.0</version>-->
-			<scope>test</scope>
-		</dependency>
 	</dependencies>
 
 	<build>
@@ -82,6 +76,10 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<image>
+						<name>leo-vegas/service-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 				</configuration>
 			</plugin>
 		</plugins>
