@@ -1,22 +1,13 @@
 package com.leovegas.wallet.controller;
 
-import com.leovegas.wallet.controller.dto.CreateTransactionRequest;
-import com.leovegas.wallet.error.WalletException;
 import com.leovegas.wallet.model.Player;
 import com.leovegas.wallet.model.constant.TransactionType;
-import com.leovegas.wallet.service.TransactionService;
 import com.leovegas.wallet.setup.Base;
 import com.leovegas.wallet.setup.TestData;
 import io.restassured.RestAssured;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 
 public class TransactionControllerTest extends Base {
-
-  @Autowired
-  private TransactionService transactionService;
 
   @Test
   public void get_empty_transaction_player_history_should_return_200() {

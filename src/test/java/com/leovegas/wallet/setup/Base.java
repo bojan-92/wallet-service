@@ -1,7 +1,6 @@
 package com.leovegas.wallet.setup;
 
 import com.leovegas.wallet.WalletServiceApplication;
-import com.leovegas.wallet.model.constant.TransactionType;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;

@@ -1,9 +1,6 @@
 package com.leovegas.wallet.controller;
 
-
-import com.leovegas.wallet.error.WalletException;
 import com.leovegas.wallet.model.Player;
-import com.leovegas.wallet.service.PlayerService;
 import com.leovegas.wallet.setup.Base;
 import com.leovegas.wallet.setup.TestData;
 import io.restassured.RestAssured;
