@@ -1,7 +1,6 @@
 package com.leovegas.wallet.setup;
 
 import com.leovegas.wallet.WalletServiceApplication;
-import com.leovegas.wallet.controller.dto.CreateTransactionRequest;
 import com.leovegas.wallet.model.constant.TransactionType;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -10,8 +9,6 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;

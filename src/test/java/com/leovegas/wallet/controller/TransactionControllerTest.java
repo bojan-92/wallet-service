@@ -123,4 +123,17 @@ public class TransactionControllerTest extends Base {
     Assertions.assertEquals(HttpStatus.BAD_REQUEST, thrown.getHttpStatus());
   }
 
+  @Test
+  public void create_invalid_transaction_type_return_400() {
+    WalletException thrown = Assertions.assertThrows(WalletException.class, () -> {
+      Player player = dataSetup.createPlayer(TestData.PLAYER_ID_1, TestData.PLAYER_NAME_1, TestData.PLAYER_BALANCE_1);
+      CreateTransactionRequest request = CreateTransactionRequest.builder().playerId(player.getId())
+          .amount(TestData.TRANSACTION_AMOUNT_GREATER_THEN_BALANCE_1)
+          .type("test").build();
+      transactionService.create(request);
+    });
+
+    Assertions.assertEquals(HttpStatus.BAD_REQUEST, thrown.getHttpStatus());
+  }
+
 }
