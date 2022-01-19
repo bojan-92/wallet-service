@@ -51,11 +51,11 @@ public abstract class Base {
     return builder.build();
   }
 
-  public Map<String, Object> getRequestBody(Long playerId, BigDecimal amount, TransactionType type) {
+  public Map<String, Object> getRequestBody(Long playerId, BigDecimal amount, String type) {
     Map<String, Object> requestBody = new HashMap<>();
     requestBody.put("playerId", playerId);
     requestBody.put("amount", amount);
-    requestBody.put("type", type.getValue());
+    requestBody.put("type", type);
     return requestBody;
   }
 

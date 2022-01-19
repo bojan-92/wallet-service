@@ -1,5 +1,6 @@
 package com.leovegas.wallet.setup;
 
+import com.leovegas.wallet.model.constant.TransactionType;
 import java.math.BigDecimal;
 
 public abstract class TestData {

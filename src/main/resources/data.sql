@@ -6,3 +6,9 @@ CREATE TABLE IF NOT EXISTS TRANSACTION
 
 INSERT INTO PLAYER
 (id, name, balance) values (1, 'Jack', 50);
+
+INSERT INTO PLAYER
+(id, name, balance) values (2, 'John', 0);
+
+INSERT INTO PLAYER
+(id, name, balance) values (3, 'Arthur', 324.32423423423);
