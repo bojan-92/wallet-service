@@ -14,19 +14,19 @@
 ## External Tools Used
  - [Postman](https://www.postman.com/) - API Development Environment
 
-## How to run application
-First way to run this app:
+## How to run the application
+The first way to run this app:
  - In order to run this app you should pull docker image from this location: https://hub.docker.com/repository/docker/bojan92/service-wallet
- - Following steps should run the app without any additonal changes ( you should to have Docker installed locally):
+ - Following steps should run the app without any additional changes ( you should have Docker installed locally):
   1. `docker pull bojan92/service-wallet:latest`
   2. `docker images`
-  3. Find image with name bojan92/service-wallet and then run command: `docker run -p 8080:8080 bojan92/service-wallet:latest` 
-Second way to run thos app:
+  3. Find an image with the name bojan92/service-wallet and then run the command: `docker run -p 8080:8080 bojan92/service-wallet:latest` 
+The second way to run this app:
  1. Checkout this code
  2. Navigate to project folder where file `docker-compose.yaml` exists
  5. Run command: `docker-compose up`
  6. Service is available on `localhost:8080` (for more details check wallet_api.yaml)
 
-If you want to check data in H2 databse, using broswer navigate to `localhost:8080/h2-console` and set username and password as shown on picture bellow:
+If you want to check data in H2 database, using browser navigate to `localhost:8080/h2-console` and set parameters as shown on the picture below:
 
 ![Screenshot](https://user-images.githubusercontent.com/15815459/150154770-e120b0f7-f213-4cba-b4be-235552528c74.png)
