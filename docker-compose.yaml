@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   wallet-service:
-    image: bojan92/service-wallet:0.0.1
+    image: bojan92/service-wallet:latest
     mem_limit: 700m
     ports:
       - "8080:8080"
