@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS PLAYER
+(id BIGINT NOT NULL AUTO_INCREMENT, name VARCHAR (255), balance DECIMAL, PRIMARY KEY (id));
+
+CREATE TABLE IF NOT EXISTS TRANSACTION
+(id BIGINT NOT NULL AUTO_INCREMENT, type VARCHAR (255), amount DECIMAL, player INTEGER, PRIMARY KEY (id));
+
+INSERT INTO PLAYER
+(id, name, balance) values (1, 'Jack', 50);
+
+INSERT INTO PLAYER
+(id, name, balance) values (2, 'John', 0);
+
+INSERT INTO PLAYER
+(id, name, balance) values (3, 'Arthur', 324.32423423423);
